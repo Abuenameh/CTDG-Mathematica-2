@@ -13,14 +13,12 @@ cimport numpy as np
 #ctypedef np.complex128_t CDTYPE_t
 
 cdef double Wt(double t, double Wi, double Wf, double tau):
-    return Wi
     if t < tau:
         return Wi + (Wf - Wi) * t / tau
     else:
         return Wf + (Wi - Wf) * (t - tau) / tau
 
 cdef double Wtp(double t, double Wi, double Wf, double tau):
-    return 1
     if t < tau:
         return (Wf - Wi) / tau
     else:
