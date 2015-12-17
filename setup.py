@@ -11,5 +11,5 @@ ext_modules = [Extension('E', ['E.pyx'], include_dirs=[np.get_include()], extra_
 setup(
     name = 'CTDG ODE',
     include_dirs = [np.get_include()],
-    ext_modules = cythonize(ext_modules, nthreads=35),
+    ext_modules = cythonize(ext_modules, nthreads=5),
 )
